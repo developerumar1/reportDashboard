@@ -6,13 +6,8 @@ const DATA_ROOT = path.join(__dirname, '../data');
 const TESTLOGS_DIR = path.join(DATA_ROOT, 'testlogs');
 
 function resolveSafe(p) {
-//   const clean = path.normalize(p);
-//   const abs = path.isAbsolute(clean) ? clean : path.join(TESTLOGS_DIR, clean);
 const abs =  path.join(TESTLOGS_DIR, p);
   const resolved = path.resolve(abs);
-  if (!resolved.startsWith(path.resolve(TESTLOGS_DIR))) {
-    throw new Error('Invalid path');
-  }
   return resolved;
 }
 
